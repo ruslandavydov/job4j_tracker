@@ -4,11 +4,12 @@ public class Engineer extends Profession {
     private String speciality;
     private String experience;
 
-    public Engineer() {
-        this.getName();
-        this.getSurname();
-        this.getEducation();
-        this.getBirthday();
+    public Engineer(
+            String name, String surname,
+            String education, int birthday,
+            String speciality, String experience
+    ) {
+        super(name, surname, education, birthday);
         this.speciality = speciality;
         this.experience = experience;
     }

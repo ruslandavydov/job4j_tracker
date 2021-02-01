@@ -3,13 +3,12 @@ package ru.job4j.inheritance;
 public class Dentist extends Doctor {
     private int extraction;
 
-    public Dentist(int extraction) {
-        this.getName();
-        this.getSurname();
-        this.getEducation();
-        this.getBirthday();
-        this.getSpeciality();
-        this.getExperience();
+    public Dentist(
+            String name, String surname,
+            String education, int birthday,
+            String speciality, String experience
+    ) {
+        super(name, surname, education, birthday, speciality, experience);
         this.extraction = extraction;
     }
 

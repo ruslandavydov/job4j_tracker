@@ -3,13 +3,13 @@ package ru.job4j.inheritance;
 public class Builder extends Engineer {
     private String specialization;
 
-    public Builder() {
-        this.getName();
-        this.getSurname();
-        this.getEducation();
-        this.getBirthday();
-        this.getSpeciality();
-        this.getExperience();
+    public Builder(
+            String name, String surname,
+            String education, int birthday,
+            String speciality, String experience,
+            String specialization
+    ) {
+        super(name, surname, education, birthday, speciality, experience);
         this.specialization = specialization;
     }
 

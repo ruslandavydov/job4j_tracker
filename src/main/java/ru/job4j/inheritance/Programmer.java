@@ -3,13 +3,13 @@ package ru.job4j.inheritance;
 public class Programmer extends Engineer {
     private String compLang;
 
-    public Programmer() {
-        this.getName();
-        this.getSurname();
-        this.getEducation();
-        this.getBirthday();
-        this.getSpeciality();
-        this.getExperience();
+    public Programmer(
+            String name, String surname,
+            String education, int birthday,
+            String speciality, String experience,
+            String specialization
+    ) {
+        super(name, surname, education, birthday, speciality, experience);
         this.compLang = compLang;
     }
 
