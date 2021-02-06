@@ -19,8 +19,8 @@ public class StartUI {
 
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        String newName = input.askStr("Enter name new item : ");
         int id = input.askInt("Enter id item : ");
+        String newName = input.askStr("Enter name new item : ");
         Item newItem = new Item(newName);
         if (tracker.replace(id, newItem)) {
             System.out.println("The editing is completed.");
