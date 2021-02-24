@@ -8,13 +8,6 @@ public class Item implements Comparable<Item> {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
-    public Item() {
-    }
-
     public Item(int id) {
         this.id = id;
     }
@@ -42,6 +35,10 @@ public class Item implements Comparable<Item> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
     }
 
     @Override

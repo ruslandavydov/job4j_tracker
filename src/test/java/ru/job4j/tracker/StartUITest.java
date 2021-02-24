@@ -28,7 +28,11 @@ public class StartUITest {
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", "Replaced item", "1", String.valueOf(item.getId()), replacedName, "2"}
+                new String[] {
+                        "0", "Replaced item", "1",
+                        String.valueOf(item.getId()),
+                        replacedName, "2"
+                }
         );
         UserAction[] actions = {
                 new CreateAction(out),

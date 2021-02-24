@@ -31,8 +31,9 @@ public class Library {
         for (Book list : books) {
             if (list.getName().equals("Clean code")) {
                 System.out.println(
-                        "Books with Clean code : " + list.getName() + ", " + list.getPages() + " pages"
-                );
+                        "Books with Clean code : "
+                        + list.getName() + ", "
+                        + list.getPages() + " pages");
             }
         }
     }
