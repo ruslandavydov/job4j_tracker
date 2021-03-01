@@ -2,8 +2,7 @@ package ru.job4j.collection;
 
 import org.junit.Test;
 
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -44,8 +43,8 @@ public class DepartmentsTest {
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2"
         );
-        List<String> result = Departments.sortAsc(input);
-        assertThat(result, is(expect));
+        Departments.sortAsc(input);
+        assertThat(input, is(expect));
     }
 
     @Test
@@ -66,7 +65,7 @@ public class DepartmentsTest {
                 "K1/SK1/SSK2",
                 "K1/SK1/SSK1"
         );
-        List<String> result = Departments.sortDesc(input);
-        assertThat(result, is(expect));
+        Departments.sortDesc(input);
+        assertThat(input, is(expect));
     }
 }
