@@ -43,7 +43,8 @@ public class DepartmentsTest {
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2"
         );
-        List<String> result = Departments.sortAsc(input);
+        List<String> result = Departments.fillGaps(input);
+        Departments.sortAsc(result);
         assertThat(result, is(expect));
     }
 
@@ -65,7 +66,8 @@ public class DepartmentsTest {
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2"
         );
-        List<String> result = Departments.sortDesc(input);
+        List<String> result = Departments.fillGaps(input);
+        Departments.sortDesc(result);
         assertThat(result, is(expect));
     }
 }
