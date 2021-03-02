@@ -20,13 +20,14 @@ public class Departments {
         return new ArrayList<>(temp);
     }
 
-    public static void sortAsc(List<String> orgs) {
-        List<String> rsl = Departments.fillGaps(orgs);
-        Collections.sort(rsl);
+    public static List<String> sortAsc(List<String> deps) {
+        Set<String> result = new TreeSet<>(fillGaps(deps));
+        return new ArrayList<>(result);
     }
 
-    public static void sortDesc(List<String> orgs) {
-        List<String> rsl = Departments.fillGaps(orgs);
-        Collections.sort(rsl, new DepDescComp());
+    public static List<String> sortDesc(List<String> deps) {
+        List<String> result = new ArrayList<>(fillGaps(deps));
+        result.sort(new DepDescComp());
+        return result;
     }
 }

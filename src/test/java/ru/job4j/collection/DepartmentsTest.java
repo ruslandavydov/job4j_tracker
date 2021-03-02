@@ -43,8 +43,8 @@ public class DepartmentsTest {
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2"
         );
-        Departments.sortAsc(input);
-        assertThat(input, is(expect));
+        List<String> result = Departments.sortAsc(input);
+        assertThat(result, is(expect));
     }
 
     @Test
@@ -58,14 +58,14 @@ public class DepartmentsTest {
         List<String> expect = Arrays.asList(
                 "K2",
                 "K2/SK1",
-                "K2/SK1/SSK2",
                 "K2/SK1/SSK1",
+                "K2/SK1/SSK2",
                 "K1",
                 "K1/SK1",
-                "K1/SK1/SSK2",
-                "K1/SK1/SSK1"
+                "K1/SK1/SSK1",
+                "K1/SK1/SSK2"
         );
-        Departments.sortDesc(input);
-        assertThat(input, is(expect));
+        List<String> result = Departments.sortDesc(input);
+        assertThat(result, is(expect));
     }
 }
