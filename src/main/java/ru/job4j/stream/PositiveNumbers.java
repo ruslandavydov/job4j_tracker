@@ -13,9 +13,9 @@ public class PositiveNumbers {
         numbs.add(3);
         numbs.add(-4);
         numbs.add(-5);
-        List<Integer> posNumbs = numbs.stream().filter(
-                numb -> numb > 0
-        ).collect(Collectors.toList());
+        List<Integer> posNumbs = numbs.stream()
+                .filter(numb -> numb > 0)
+                .collect(Collectors.toList());
         System.out.println(posNumbs);
     }
 }
