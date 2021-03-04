@@ -4,7 +4,6 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import java.util.List;
-import java.util.Arrays;
 
 public class ConvertMatrix2ListTest {
 
@@ -15,7 +14,7 @@ public class ConvertMatrix2ListTest {
                 {1, 2},
                 {3, 4}
         };
-        List<Integer> expect = Arrays.asList(
+        List<Integer> expect = List.of(
                 1, 2, 3, 4
         );
         List<Integer> result = list.toList(input);
