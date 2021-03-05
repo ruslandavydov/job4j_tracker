@@ -3,13 +3,13 @@ package ru.job4j.bank;
 import java.util.*;
 
 /**
- * Класс BankService
+ * Класс Bank
  *
  * @author RUSLAN DAVYDOV
  * @version 1.0
  * @since 25.02.2021
  */
-public class BankService {
+public class Bank {
     /**
      * База данных банка users.
      */
@@ -34,8 +34,10 @@ public class BankService {
      */
     public void addAccount(String passport, Account account) {
         Optional<User> user = findByPassport(passport);
-        if (!users.get(user.get()).contains(account)) {
-            users.get(user.get()).add(account);
+        if (user.isPresent()) {
+            if (!users.get(user.get()).contains(account)) {
+                users.get(user.get()).add(account);
+            }
         }
     }
 
@@ -68,12 +70,12 @@ public class BankService {
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<Account> rsl = Optional.empty();
         Optional<User> user = findByPassport(passport);
-        if (user.isPresent()) {
             /* for (Account account : users.get(user)) {
                 if (account.getRequisite().equals(requisite)) {
                     return account;
                 }
             } */
+        if (user.isPresent()) {
             return users.get(user.get())
                     .stream()
                     .filter(account -> account.getRequisite().equals(requisite))
@@ -99,9 +101,8 @@ public class BankService {
         boolean result = false;
         Optional<Account> scrAccount = findByRequisite(srcPassport, srcRequisite);
         Optional<Account> destAccount = findByRequisite(destPassport, destRequisite);
-        if (scrAccount.get().getRequisite() != null
-                || destAccount.get().getRequisite() != null
-                || scrAccount.get().getBalance() >= amount) {
+        if (scrAccount.isPresent() && destAccount.isPresent()
+                && scrAccount.get().getBalance() >= amount) {
             scrAccount.get().setBalance(scrAccount.get().getBalance() - amount);
             destAccount.get().setBalance(destAccount.get().getBalance() + amount);
             result = true;
